@@ -10,5 +10,5 @@ print(A)
 
 det = np.linalg.det(A) 
 
-print("\nDeterminant of given 2X2 matrix:") 
+print("\nDeterminant: ") 
 print(int(det)) 
