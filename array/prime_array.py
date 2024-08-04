@@ -1,17 +1,20 @@
 import math
-def is_prime(n):
-    return all(n % i != 0 for i in range(2, int(math.sqrt(n)) + 1))
-
-def generate_primes(limit):
-    primes = []
-    num = 2
-    while len(primes) < limit:
-        if is_prime(num):
-            primes.append(num)
-        num += 1
-    return primes
 
 N = int(input("Number of primes: "))
-primes = generate_primes(N)
+
+primes = []
+num = 2
+
+while len(primes) < N:
+    if num > 1:
+        is_prime = True
+        for i in range(2, int(math.sqrt(num)) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+    num += 1
+
 print(f"Prime array: {primes}")
 print(primes[N-1])
