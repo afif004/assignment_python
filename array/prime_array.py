@@ -1,10 +1,5 @@
 def is_prime(n):
-    if n <= 1:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
+    return all(n % i != 0 for i in range(2, int(n ** 0.5) + 1))
 
 def generate_primes(limit):
     primes = []
@@ -15,6 +10,7 @@ def generate_primes(limit):
         num += 1
     return primes
 
-prime = generate_primes(100)
-N = int(input())
-print(prime[N-1])
+N = int(input("Number of primes: "))
+primes = generate_primes(N)
+print(f"Prime array: {primes}")
+print(primes[N-1])
