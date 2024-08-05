@@ -7,16 +7,13 @@ for i in range(rows):
         A[i][j] = int(input(f"A[{i}][{j}]: "))
 
 zero_count = 0
-non_zero_count = 0
 
 for i in range(rows):
     for j in range(cols):
         if A[i][j] == 0:
-            zero_count += 1
-        else:
-            non_zero_count += 1
+            zero_count +=1
 
-if zero_count > non_zero_count:
-    print("The matrix is sparse.")
-else:
+if zero_count <= ( (rows*cols)//2):
     print("The matrix is not sparse.")
+else:
+    print("The matrix is sparse.")
